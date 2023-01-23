@@ -1,13 +1,25 @@
 variable "default_tags" {
-    type = map(string)
-    default = {
-      "env" = "terraform_testing"
-    }
-    description = "describing my variable"
+  type = map(string)
+  default = {
+    "env" = "vbraun"
+  }
+  description = "describing my variable"
 }
 
 variable "public_subnet_count" {
-  type = number
-  description = "(optional) describing my variable"
-  default = 2
+  type        = number
+  description = "public subnet count"
+  default     = 2
+}
+
+variable "private_subnet_count" {
+  type        = number
+  description = "private subnet count"
+  default     = 2
+}
+
+variable "vpc_cidr" {
+  type        = string
+  default     = "10.0.0.0/16"
+  description = "Main VPC CIDR block"
 }

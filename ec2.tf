@@ -3,7 +3,7 @@ resource "aws_instance" "main" {
   instance_type          = "t3.micro"
   key_name               = "vbraun"
   subnet_id              = aws_subnet.public[0].id
-  vpc_security_group_ids = ["sg-0339eb9af60d35c0f"]
+  vpc_security_group_ids = [aws_vpc.main.default_security_group_id]
   tags = {
     "Name" = "${var.default_tags.env}-EC2"
   }
